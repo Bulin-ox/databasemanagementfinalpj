@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Date Range</title>
+</head>
+<body>
+    <h1>Select Date Range for Data</h1>
+    <form action="" method="post"> <!-- The action will be set dynamically by JavaScript -->
+        Start Date: <input type="date" name="start_date">
+        End Date: <input type="date" name="end_date">
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        // Assuming the user reaches this form through a specific route, we can dynamically set the form action
+        document.querySelector('form').action = window.location.pathname;
+    </script>
+</body>
+</html>
+
