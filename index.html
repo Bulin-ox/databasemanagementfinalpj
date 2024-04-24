@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Viewer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2 {
+            color: #005a9c;
+        }
+        a {
+            text-decoration: none;
+            color: #005a9c;
+            transition: color 0.3s ease;
+        }
+        a:hover, a:focus {
+            color: #f47920;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #f47920;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px 0;
+            display: block;
+        }
+        button:hover {
+            background-color: #cf6412;
+        }
+        .tableauPlaceholder {
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+        }
+        h1 {
+            color: #ffffff; /* Bright color for high contrast */
+            font-weight: bold;
+            font-size: 40px; /* Larger font size */
+            text-shadow: 2px 2px 4px rgba(1, 1, 1, 1); /* Horizontal shadow, Vertical shadow, Blur radius, Color */
+            height: 300px; /* Set a fixed height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.10)), url('https://static01.nyt.com/images/2020/03/31/nyregion/31nytoday/merlin_171117870_77cfc517-f998-4641-b3d6-b0fc01365d98-facebookJumbo.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover; /* Or 'contain' */
+        }
+        .developers {
+            background-color: #d9edf7; /* A light blue background for the developers line */
+            padding: 10px;
+            border-radius: 5px;
+            font-style: italic; /* Italicize the font */
+            color: #31708f; /* A darker blue color for the text */
+            margin-bottom: 20px;
+        }
+    </style>
+    <script type='text/javascript'>
+        function toggleVisualization(divId) {
+            var divElement = document.getElementById(divId);
+            if (divElement.style.display === 'none') {
+                divElement.style.display = 'block';
+            } else {
+                divElement.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>New York State COVID Data Viewer</h1>
+    <h2 class="developers">Developers: Bulin Li, Suyi Tao @ GWU Statistics</h2>
+    <h2>COVID Fatality Data</h2>
+    <ul>
+        <li><a href="/monthly_fatalities">Monthly Fatality Chart</a></li>
+        <li><a href="/range_fatalities">Date Range Fatality Chart</a></li>
+    </ul>
+    <h2>COVID Testing Data</h2>
+    <ul>
+        <li><a href="/monthly_testing">Monthly Testing Chart</a></li>
+        <li><a href="/range_testing">Date Range Testing Chart</a></li>
+    </ul>
+    <h2>COVID Vaccination Data</h2>
+    <ul>
+        <li><a href="/monthly_vaccination">Monthly vaccination Chart</a></li>
+        <li><a href="/range_vaccination">Date Range vaccination Chart</a></li>
+    </ul>
+    <h2>COVID Facility Map by Counties</h2>
+
+    <body>
+    <button onclick="toggleVisualization('viz1713940787819')">Fatalities by Counties</button>
+    <div class='tableauPlaceholder' id='viz1713940787819' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;2X&#47;2XRB7G635&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;2XRB7G635' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;2X&#47;2XRB7G635&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1713940787819');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+
+    <button onclick="toggleVisualization('viz1713941648260')">Vaccinations by Counties</button>
+    <div class='tableauPlaceholder' id='viz1713941648260' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;JP&#47;JPTX337C5&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;JPTX337C5' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;JP&#47;JPTX337C5&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1713941648260');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+
+    <button onclick="toggleVisualization('viz1713942274106')">Testing by Counties</button>
+    <div class='tableauPlaceholder' id='viz1713942274106' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;93&#47;93D67RBHT&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;93D67RBHT' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;93&#47;93D67RBHT&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1713942274106');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+
+</body>
+
+    <div class="footer">
+        <p>© 2024 Data Viewer. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
