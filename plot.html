@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visualization</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="plot"></div>
+    <script>
+        var plotData = {{ plot|safe }};
+        Plotly.newPlot('plot', plotData.data, plotData.layout);
+    </script>
+</body>
+</html>
